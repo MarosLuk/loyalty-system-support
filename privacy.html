@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ochrana osobných údajov a podpora — Loyalty System</title>
-<meta name="description" content="Aké údaje spracúva mobilná aplikácia Loyalty System (POS terminál pre obsluhu), aké práva máte podľa GDPR a kontakt na podporu.">
+<title>Ochrana osobných údajov a podpora — Loyalty Systems</title>
+<meta name="description" content="Aké údaje spracúva mobilná aplikácia Loyalty Systems (Rezervácie a vernostný klub), aké práva máte podľa GDPR a kontakt na podporu.">
 <style>
   :root {
-    --ink: #1B1B1D; --accent: #326B50; --paper: #FFFFFF;
-    --bg: #F3F6F2; --surface: #FFFFFF; --text: #1B1B1D; --muted: #6E6A65; --line: #E4DED6;
+    --ink: #244F3C; --accent: #326B50; --paper: #FDFEFC;
+    --bg: #F3F6F2; --surface: #FDFEFC; --text: #25382C; --muted: #647367; --line: #DAE3D8;
   }
   @media (prefers-color-scheme: dark) {
-    :root { --bg: #141416; --surface: #1F1F22; --text: #F0EDE8; --muted: #9A958E; --line: #33322F; }
+    :root { --bg: #212121; --surface: #292D2A; --text: #E8EEE7; --muted: #ABB8AA; --line: #3E4940; --accent:#9DC9AA; }
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
@@ -48,17 +48,14 @@
   a { color: #1F6FEB; }
   @media (prefers-color-scheme: dark) { a { color: #7FB2FF; } }
 </style>
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="apple-touch-icon" href="apple-icon.png">
-<meta name="theme-color" content="#326B50">
 </head>
 <body>
 
 <header>
   <div class="wrap">
-    <div class="brand"><img src="icon-512.png" width="40" height="40" alt="" style="border-radius:9px"> Loyalty System</div>
+    <div class="brand"><span class="star">★</span> Loyalty Systems</div>
     <h1>Ochrana osobných údajov a podpora</h1>
-    <p class="meta">Mobilná aplikácia „Loyalty System" — POS terminál pre obsluhu · aktualizované 28. októbra 2026</p>
+    <p class="meta">Mobilná aplikácia „Loyalty Systems" — Rezervácie a vernostný klub · aktualizované 2. novembra 2026</p>
     <nav>
       <a href="#ochrana-osobnych-udajov">Ochrana osobných údajov</a>
       <a href="#podpora">Podpora</a>
@@ -70,11 +67,11 @@
 <main class="wrap">
 
   <p>
-    <strong>Loyalty System</strong> je <strong>pracovný nástroj pre obsluhu</strong> reštaurácií
-    a prevádzok, ktoré používajú vernostný systém s digitálnou kartou v Apple Wallet a Google
-    Wallet — nie aplikácia pre zákazníkov. Obsluha ním naskenuje vernostnú kartu zákazníka,
-    zaeviduje bloček a uplatní odmenu. Účty do aplikácie zakladá správca prevádzky; verejná
-    registrácia neexistuje.
+    <strong>Loyalty Systems</strong> spája verejné zákaznícke rezervácie a vernostný klub.
+    Zákazník si môže samostatne vytvoriť účet cez e-mail alebo podporované Apple/Google
+    prihlásenie, vybrať službu a spravovať svoje termíny bez pozvánky od prevádzky.
+    Tímové funkcie sú oddelené a vyžadujú oprávnenie správcu prevádzky.
+    Toto vydanie neobsahuje online platby, zálohy ani predplatné.
   </p>
 
   <!-- ═══════════════════════ OCHRANA OSOBNÝCH ÚDAJOV ═══════════════════════ -->
@@ -134,11 +131,6 @@
           <td>plnenie vernostného programu a oprávnený záujem prevádzky na jeho správe</td>
         </tr>
         <tr>
-          <td>Údaje rezervácií a klientov (meno, e-mail, voliteľný telefón, termín, vybraná služba, pracovník, cena, stav a poznámka)</td>
-          <td>evidencia rezervácií, dostupnosti a dokončených návštev, správa klientov a nadväzujúce vernostné operácie v prevádzkach so zapnutým rezervačným modulom</td>
-          <td>spracúvanie riadi príslušná prevádzka podľa svojich podmienok a pravidiel ochrany údajov</td>
-        </tr>
-        <tr>
           <td>Obraz z kamery</td>
           <td>načítanie QR kódu vernostnej karty zákazníka</td>
           <td>plnenie zmluvy so zákazníkom vernostného programu (čl. 6 ods. 1 písm. b) GDPR)</td>
@@ -155,8 +147,6 @@
       história transakcií) — tie však nespracúva samostatne, sú súčasťou vernostného systému
       prevádzky a riadia sa zásadami ochrany údajov príslušného vernostného klubu.
     </p>
-
-    <p>Rezervačný modul a správa klientov sú dostupné podľa konfigurácie a oprávnení prevádzky. Údaje rezervácií a zákazníkov sa riadia účelom a dobou uchovávania určenej prevádzkou; výmaz účtu obsluhy automaticky nemaže rezervácie klientov. O výmaz vlastných zákazníckych údajov môžete požiadať prevádzku alebo podporu uvedenú nižšie.</p>
 
     <h3>3. Čo aplikácia nerobí</h3>
     <ul>
@@ -187,10 +177,13 @@
     <h3>5. Komu údaje poskytujeme</h3>
     <ul>
       <li><strong>Poskytovateľ hostingu</strong> serverovej časti systému (Hetzner Online GmbH, Nemecko; produkčné servery v EÚ) — ako sprostredkovateľ.</li>
-      <li><strong>Apple a Google</strong> — výhradne v rozsahu distribúcie aplikácie z ich obchodov;
-        spracúvanie pri distribúcii sa riadi aj ich vlastnými zásadami ochrany údajov; aplikácia im neposiela účty obsluhy na reklamu ani analytiku.</li>
+      <li><strong>Google Firebase Authentication</strong> — zabezpečuje zákaznícke prihlásenie,
+        overenie e-mailu a obnovenie hesla. Spracúva identifikátor účtu, e-mail, meno,
+        prihlasovacie a bezpečnostné údaje podľa podmienok Google/Firebase.
+        Pri tejto službe môže dochádzať k spracúvaniu mimo EÚ za zmluvných záruk poskytovateľa.</li>
+      <li><strong>Apple a Google</strong> — distribúcia aplikácie a voliteľné prihlásenie cez
+        účet daného poskytovateľa; prihlasovacie údaje sa nepoužívajú na reklamu ani sledovanie.</li>
     </ul>
-    <p>Voliteľný súkromný odber iCalendar sprístupní údaje kalendára kalendárovej aplikácii, ktorú si správca alebo oprávnený používateľ zvolí (napríklad Apple Calendar, Google Calendar alebo Outlook). Odber nie je podmienkou používania aplikácie; jeho adresa je súkromná a nemá sa verejne zdieľať.</p>
     <p>Údaje <strong>nepredávame</strong> a neposkytujeme ich na marketingové účely.</p>
 
     <p>
@@ -210,7 +203,7 @@
       smerujte v prvom rade na prevádzku, ktorá vám prístup vytvorila; pomôžeme jej ich vybaviť.
     </p>
     <p>
-      V novej verzii aplikácie môžete vlastný účet natrvalo zmazať cez <em>Domov → Účet a nastavenia →
+      V novej verzii aplikácie môžete vlastný účet natrvalo zmazať cez <em>Domov → Účet a údaje →
       Zmazať môj účet</em>. Zadáte aktuálne heslo a potvrdíte <em>Natrvalo zmazať účet</em>.
       Server okamžite odstráni účet (meno, e-mail, heslo a rolu), všetky relácie a jeho súvisiace
       bezpečnostné udalosti z aplikačnej databázy. Historické vernostné transakcie zákazníkov
@@ -218,6 +211,19 @@
       Používatelia starších verzií môžu využiť <a href="#kontakt">kontakt poskytovateľa</a>.
       Ďalšie žiadosti týkajúce sa osobných údajov vybavujeme spravidla do jedného mesiaca.
     </p>
+
+    <h3>Zákaznícky účet a rezervácie</h3>
+    <p>Pri rezervácii spracúvame meno, overený e-mail, voliteľný telefón,
+    vybranú službu, termín, odpovede vo formulári a históriu rezervácií na účely
+    vybavenia služby. Voliteľný marketingový súhlas možno odvolať.</p>
+    <p>V časti Rezervácie → Môj účet → Zmazať môj účet môžete po čerstvom prihlásení
+    potvrdiť trvalý výmaz. Odstráni sa Firebase prihlasovací účet, miestny profil,
+    vernostná karta a priradený tímový účet. Budúce nezaplatené rezervácie sa zrušia.
+    Prevádzkové záznamy rezervácií zostávajú bez mena, e-mailu, telefónu a poznámok;
+    finančné záznamy podliehajú príslušnej zákonnej retencii. Bezpečnostný pseudonymný
+    záznam bráni obnoveniu zmazaného účtu rozbehnutou požiadavkou.
+    Údaje iných prevádzok môžu podliehať samostatnej správe a ich žiadosti o výmaz
+    vybaví príslušná prevádzka. Retencia záloh je opísaná vyššie.</p>
 
     <h3>7. Deti</h3>
     <p>
@@ -240,13 +246,14 @@
 
     <h4>Ako získam prístup do aplikácie?</h4>
     <p>
-      Účty zakladá <strong>správca vašej prevádzky</strong> — v aplikácii sa nedá
-      zaregistrovať. Ak sa nemôžete prihlásiť, obráťte sa najprv na svojho manažéra.
+      Vyberte Rezervácie a Vytvoriť účet. Verejná zákaznícka registrácia nevyžaduje
+      pozvánku ani schválenie prevádzkou; e-mail sa potvrdzuje overovacím odkazom.
+      Tímový prístup do správy prevádzky prideľuje správca.
     </p>
 
     <h4>Mení aplikácia ikonu alebo vzhľad podľa prevádzky?</h4>
     <p>
-      Vydanie 1.0.0 používa jednotnú neutrálnu ikonu, názov a vzhľad.
+      Vydanie 1.0.0 (27) používa jednotnú neutrálnu ikonu, názov a vzhľad.
       Nenačítava klientské logá ani témy a neponúka prepínanie ikon prevádzok.
       Vernostné pravidlá sa riadia nastavením pripojenej prevádzky.
     </p>
@@ -264,7 +271,7 @@
       <li>Na prihlasovacej obrazovke skontrolujte, že je v poli <em>Prevádzka</em> vybraná
         vaša prevádzka.</li>
       <li>Ak problém trvá, napíšte nám na kontaktný e-mail nižšie a uveďte verziu aplikácie
-        (<em>Domov → Účet a nastavenia</em>).</li>
+        (<em>Domov → Účet a údaje</em>).</li>
     </ul>
 
     <h4>Ráno ma appka odhlásila</h4>
@@ -276,7 +283,7 @@
     <h4>Chcem zrušiť svoj účet alebo vymazať údaje</h4>
     <p>
       Vlastný účet môžete zmazať priamo v aplikácii bez kontaktovania správcu.
-      Vo vydaní 1.0.0 nájdete <em>Domov → Účet a nastavenia → Zmazať môj účet</em>; podrobnosti
+      Vo vydaní 1.0.0 (27) nájdete <em>Domov → Účet a údaje → Zmazať môj účet</em>; podrobnosti
       sú v časti <a href="#ochrana-osobnych-udajov">Ochrana osobných údajov</a>.
     </p>
 
@@ -302,7 +309,7 @@
   </section>
 
   <footer>
-    Loyalty System · Dakoty Studio s. r. o. ·
+    Loyalty Systems · Dakoty Studio s. r. o. ·
     <a href="#ochrana-osobnych-udajov">Ochrana osobných údajov</a> ·
     <a href="#podpora">Podpora</a>
   </footer>
